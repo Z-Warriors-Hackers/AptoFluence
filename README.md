@@ -38,15 +38,23 @@ AptoFluence lets **sellers** run performance-driven campaigns and **automaticall
 
 ### 📸 Screenshots
 
-* **Seller Dashboard:** campaign creation, budget, and KPI tracking.
+## 📸 Screenshots
 
-* <img width="1280" height="701" alt="image" src="[https://github.com/user-attachments/assets/9d5482fc-ca56-4c48-abc8-49740de21149](https://github.com/Z-Warriors-Hackers/AptoFluence/blob/main/apt1.jpg)" />
-  
-* **Influencer Marketplace:** campaign offers, accept/reject interface.
-* 
-* **Contract View:** milestones, proofs, and status.
-* 
-* **Analytics View:** conversion metrics and influencer ROI.
+### Seller Dashboard
+![Seller Dashboard](./apt1.jpg)
+
+### Influencer Marketplace
+![Influencer Marketplace](./apt2.jpg)
+
+### Contract Management
+![Contract Management](./apt3.jpg)
+
+### Campaign Analytics
+![Campaign Analytics](./apt4.jpg)
+
+### Payout & Escrow Flow
+![Payout & Escrow Flow](./apt5.jpg)
+
 
 ---
 
