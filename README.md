@@ -138,26 +138,8 @@ npm run preview
 ## 🛠️ Technical Implementation
 
 ### *Smart Contract Features*
-- Multi-signature escrow accounts
 - Automated trigger execution
 - Performance-based payment releases
-- Dispute resolution mechanisms
-
-### *Security Measures*
-- Wallet-based authentication
-- Encrypted transaction data
-- Smart contract auditing
-- Secure API endpoints
-
-### *Scalability Solutions*
-- Modular component architecture
-- Efficient state management
-- Optimized blockchain interactions
-- Responsive design patterns
-
-## 🌐 Live Demo
-
-*Production URL*: [https://aptofluence-web3-inf-w9su.bolt.host](https://aptofluence-web3-inf-w9su.bolt.host)
 
 ### Demo Accounts
 - *Seller Demo*: Experience campaign creation and management
@@ -168,73 +150,7 @@ npm run preview
 [Insert Platform Stats Section]
 Add key metrics and usage statistics
 
-## 🤝 Contributing
 
-We welcome contributions from the community! Here's how you can help:
 
-### *Development Setup*
-1. Fork the repository
-2. Create a feature branch: git checkout -b feature/amazing-feature
-3. Make your changes and commit: git commit -m 'Add amazing feature'
-4. Push to the branch: git push origin feature/amazing-feature
-5. Open a Pull Request
 
-### *Contribution Guidelines*
-- Follow TypeScript best practices
-- Maintain consistent code formatting
-- Add tests for new features
-- Update documentation as needed
-- Ensure responsive design compatibility
 
-## 🗺️ Roadmap
-
-### *Phase 1: Core Platform* ✅
-- [x] Basic campaign creation and management
-- [x] Influencer marketplace and profiles
-- [x] Contract system and deliverable tracking
-- [x] Payment processing and escrow
-
-### *Phase 2: Advanced Features* 🚧
-- [ ] Advanced analytics and reporting
-- [ ] Multi-language support
-- [ ] Mobile application
-- [ ] API for third-party integrations
-
-### *Phase 3: Ecosystem Expansion* 📋
-- [ ] Additional blockchain networks
-- [ ] NFT-based rewards system
-- [ ] DAO governance implementation
-- [ ] Advanced AI matching algorithms
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- *Aptos Foundation* for blockchain infrastructure
-- *React Team* for the amazing frontend framework
-- *Tailwind CSS* for the utility-first CSS framework
-- *Open Source Community* for inspiration and tools
-
-## 📞 Support & Contact
-
-### *Community*
-- *Discord*: [Join our community](https://discord.gg/aptofluence)
-- *Twitter*: [@AptoFluence](https://twitter.com/aptofluence)
-- *Telegram*: [AptoFluence Channel](https://t.me/aptofluence)
-
-### *Technical Support*
-- *GitHub Issues*: [Report bugs or request features](https://github.com/yourusername/aptofluence/issues)
-- *Documentation*: [Comprehensive guides and API docs](https://docs.aptofluence.com)
-- *Email*: support@aptofluence.com
-
----
-
-<div align="center">
-
-*Built with ❤️ for the Web3 Creator Economy*
-
-[🌐 Website](https://aptofluence-web3-inf-w9su.bolt.host) • [📚 Docs](https://docs.aptofluence.com) • [🐦 Twitter](https://twitter.com/aptofluence) • [💬 Discord](https://discord.gg/aptofluence)
-
-</div>
