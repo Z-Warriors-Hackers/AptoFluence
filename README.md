@@ -38,8 +38,6 @@ AptoFluence lets **sellers** run performance-driven campaigns and **automaticall
 
 ### 📸 Screenshots
 
-## 📸 Screenshots
-
 ### Seller Dashboard
 ![Seller Dashboard](./apt1.jpg)
 
