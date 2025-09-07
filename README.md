@@ -4,7 +4,19 @@
 
 AptoFluence lets **sellers** run performance-driven campaigns and **automatically engage the next best influencer** when KPIs slip—using **Aptos Move** smart contracts for events, rotation, and payout intents.
 
+
+# 📖 Project Description
+
+AptoFluence is a Web3 influencer marketing platform that automates campaign management and influencer engagement using Aptos Move smart contracts. Sellers create campaigns with clear KPIs, budgets, and ranked influencer tiers. Real-time sales tracking (via oracle integration) determines campaign success—if performance drops, the system automatically reassigns the campaign to the next influencer with higher credibility.
+
+Payments are managed through smart contract–backed escrow intents, ensuring funds are only released after deliverables are approved or KPIs are achieved. Influencers maintain transparent profiles with pricing, credibility scores, and proof of past work, while sellers gain insights into ROI, cost per conversion, and campaign impact.
+
+By combining React-based dashboards, a Node.js backend, and Aptos blockchain contracts, AptoFluence provides a frictionless, scalable, and transparent solution for modern influencer marketing in the Web3 creator economy.
 ---
+
+#🌍 Vision
+
+To revolutionize influencer marketing by building a trustless, transparent, and automated ecosystem where businesses maximize ROI and influencers are rewarded fairly based on real performance. AptoFluence envisions a world where brands and creators collaborate without middlemen, empowered by the speed, security, and scalability of the Aptos blockchain.
 
 ## 🌟 Key Features
 
