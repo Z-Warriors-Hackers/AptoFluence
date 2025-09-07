@@ -1,4 +1,4 @@
-<img width="1280" height="701" alt="image" src="https://github.com/user-attachments/assets/9d5482fc-ca56-4c48-abc8-49740de21149" /><img width="1280" height="701" alt="image" src="https://github.com/user-attachments/assets/7784bf1b-6dde-4129-9f3b-267c94bf06b4" /># 🚀 AptoFluence — Web3 Influencer Marketing on Aptos
+# 🚀 AptoFluence — Web3 Influencer Marketing on Aptos
 
 *Automated, performance-based influencer marketing with transparent on-chain logic and reputation.*
 
@@ -39,6 +39,8 @@ AptoFluence lets **sellers** run performance-driven campaigns and **automaticall
 ### 📸 Screenshots
 
 * **Seller Dashboard:** campaign creation, budget, and KPI tracking.
+
+* <img width="1280" height="701" alt="image" src="[https://github.com/user-attachments/assets/9d5482fc-ca56-4c48-abc8-49740de21149](https://github.com/Z-Warriors-Hackers/AptoFluence/blob/main/apt1.jpg)" />
   
 * **Influencer Marketplace:** campaign offers, accept/reject interface.
 * 
