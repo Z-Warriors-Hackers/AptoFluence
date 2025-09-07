@@ -1,156 +1,168 @@
-# 🚀 AptoFluence - Web3 Influencer Marketing Platform
+<img width="1280" height="701" alt="image" src="https://github.com/user-attachments/assets/9d5482fc-ca56-4c48-abc8-49740de21149" /><img width="1280" height="701" alt="image" src="https://github.com/user-attachments/assets/7784bf1b-6dde-4129-9f3b-267c94bf06b4" /># 🚀 AptoFluence — Web3 Influencer Marketing on Aptos
 
-> *Revolutionizing Influencer Marketing with Blockchain Automation on Aptos*
+*Automated, performance-based influencer marketing with transparent on-chain logic and reputation.*
 
-AptoFluence is a cutting-edge Web3 platform that automates influencer marketing through smart contracts, enabling sellers to set performance-based triggers and automatically engage influencers when sales targets aren't met. Built on the Aptos blockchain for secure, transparent, and automated transactions.
+AptoFluence lets **sellers** run performance-driven campaigns and **automatically engage the next best influencer** when KPIs slip—using **Aptos Move** smart contracts for events, rotation, and payout intents.
+
+---
 
 ## 🌟 Key Features
 
-### 🎯 *Smart Contract Automation*
-- *Performance-Based Triggers*: Automatically engage influencers when sales drop by specified percentages
-- *Escrow System*: Secure fund management with automatic payment releases
-- *Multi-Tier Escalation*: Progressive influencer engagement based on performance thresholds
+### 🎯 Smart Contract Automation
 
-### 💰 *Transparent Pricing System*
-- *Influencer-Driven Rates*: Content creators set their own per-advertisement pricing
-- *Platform-Specific Pricing*: Different rates for Instagram, YouTube, and Twitter
-- *Minimum Budget Controls*: Influencers specify minimum campaign budgets they'll accept
+* **Performance triggers:** If sales fall below configured thresholds (e.g., 10%, 20%), the contract emits events to **auto-rotate** to the next influencer.
+* **Escrow intent & payouts:** Contracts emit `PayoutReleased` events; the treasury service executes transfers (upgradeable to full on-chain escrow).
+* **Multi-tier escalation:** Define progressive thresholds to escalate influencer credibility.
 
-### 🤝 *Comprehensive Contract Management*
-- *Detailed Proposals*: Clear deliverables, timelines, and payment structures
-- *Proof-Based Payments*: Automatic fund release upon deliverable approval
-- *Credibility Scoring*: Performance-based reputation system for influencers
+### 💰 Transparent Pricing System
 
-### 🔐 *Blockchain Security*
-- *Aptos Integration*: Leveraging Aptos blockchain for fast, secure transactions
-- *Wallet Integration*: Seamless crypto wallet connectivity
-- *Smart Contract Escrow*: Trustless payment system with automatic releases
+* **Influencer-set pricing** with platform-specific rates (Instagram / YouTube / X).
+* **Minimum budget controls** and per-ad pricing tiers.
 
-## 🎬 Platform Demo
+### 🤝 Contract Management
 
-[Insert Demo Video Section]
-Add your platform walkthrough video here
+* **Proposals & milestones:** Clear deliverables, timelines, and payment structure.
+* **Proof-based payments:** Release only after approved deliverables.
+* **Credibility scoring:** Reputation improves with verified performance.
 
-## 📸 Screenshots
+### 🔐 Blockchain Security
 
-[Insert Screenshots Section]
-Add platform screenshots showcasing key features
+* **Aptos Move** for deterministic logic and resource safety.
+* **Account/wallet–based** actions.
+* **Event-driven automation** for reassign & payouts.
 
-### Dashboard Views
-[Insert Seller Dashboard Screenshot]
-Seller dashboard showing campaign management and analytics
+---
 
-[Insert Influencer Dashboard Screenshot]
-Influencer dashboard displaying available campaigns and earnings
 
-### Key Features
-[Insert Marketplace Screenshot]
-Marketplace showing available campaigns for influencers
 
-[Insert Contract Management Screenshot]
-Contract management interface with deliverable tracking
+
+### 📸 Screenshots
+
+* **Seller Dashboard:** campaign creation, budget, and KPI tracking.
+  
+* **Influencer Marketplace:** campaign offers, accept/reject interface.
+* 
+* **Contract View:** milestones, proofs, and status.
+* 
+* **Analytics View:** conversion metrics and influencer ROI.
+
+---
 
 ## 🏗️ Architecture
 
-### *Frontend Stack*
-- *React 18* with TypeScript for type-safe development
-- *Tailwind CSS* for responsive, modern UI design
-- *Vite* for fast development and optimized builds
-- *Lucide React* for consistent iconography
+```
+React Frontend (Seller + Influencer UI)
+        │
+        ▼
+Backend API (Node/TS, Express)
+  • /campaigns, /sales, /influencers
+  • Telegram/Discord notifications
+  • Treasury (APT transfers)
+        │        ▲
+        │ Events │
+        ▼        │
+Aptos Move Contracts  ──► Events: SaleRecorded / ReassignNeeded / InfluencerAssigned / PayoutReleased
+  • Campaigns (KPI, windows, thresholds, rotation)
+  • Influencer registry (credibility, pricing)
+  • Payout intent via events
+```
 
-### *Blockchain Integration*
-- *Aptos Blockchain* for smart contract deployment
-- *Wallet Integration* for seamless crypto transactions
-- *Smart Contract Escrow* for automated payment processing
+**Event flow:**
+`record_sale` → `evaluate_and_maybe_reassign` → **ReassignNeeded** → next influencer notified → `finalize_and_payout` → **PayoutReleased** → treasury pays.
 
-### *Data Management*
-- *LocalStorage* for demo data persistence
-- *Real-time Updates* for campaign and payment tracking
-- *Modular Architecture* for scalable development
+---
 
-## 🚀 Getting Started
+## 🔏 Smart Contracts
 
-### Prerequisites
-- Node.js 18+ and npm
-- Modern web browser with wallet extension support
-- Basic understanding of Web3 concepts
+**Module:** `influencer_mkt.move` (Aptos Move)
 
-### Installation
+**Core Resources**
 
-1. *Clone the repository*
-   bash
-   git clone https://github.com/yourusername/aptofluence.git
-   cd aptofluence
-   
+* `Registry`: Influencer profiles (`credibility`, `followers`, `category`, `pricing`, `active`).
+* `Campaign`: Seller KPI target, time window per influencer, thresholds, ranked influencer addresses, per-influencer sales, status.
 
-2. *Install dependencies*
-   bash
-   npm install
-   
+**Events**
 
-3. *Start development server*
-   bash
-   npm run dev
-   
+* `SaleRecorded(campaign_id, influencer, amount)`
+* `InfluencerAssigned(campaign_id, influencer)`
+* `ReassignNeeded(campaign_id, next_influencer)`
+* `PayoutReleased(campaign_id, influencer, amount, reason)`
 
-4. *Open your browser*
-   Navigate to http://localhost:5173
+**Behavior**
 
-### Building for Production
-bash
-npm run build
-npm run preview
+* Create campaign → assign `influencers[0]` and start the window.
+* Record sales → attribute to current influencer.
+* Evaluate window → if under target, rotate to next influencer and emit events.
+* Finalize → emit payout intent (`base` ± `bonus`) and close.
 
+---
 
-## 👥 User Roles & Workflows
+## 📡 API (Frontend → Backend)
 
-### 🏢 *Sellers (Businesses)*
-1. *Campaign Creation*: Set up automated campaigns with performance triggers
-2. *Smart Contract Deployment*: Define rules for automatic influencer engagement
-3. *Budget Management*: Allocate funds across different performance tiers
-4. *Deliverable Approval*: Review and approve influencer submissions
-5. *Performance Tracking*: Monitor campaign progress and ROI
+### Influencers
 
-### 🎭 *Influencers (Content Creators)*
-1. *Profile Setup*: Configure rates, platforms, and minimum budgets
-2. *Marketplace Browsing*: Discover relevant campaign opportunities
-3. *Contract Acceptance*: Review and accept campaign proposals
-4. *Content Creation*: Produce and submit required deliverables
-5. *Earnings Management*: Track payments and withdraw funds
+```http
+POST /influencers/register
+Content-Type: application/json
+```
 
-## 🔧 Core Functionality
+```json
+{
+  "addr": "0xINFL...",
+  "contact": "@handle",
+  "category": "Instagram",
+  "followers": 150000,
+  "location": "IN",
+  "base_price": 50000,
+  "credibility": 85
+}
+```
 
-### *Automated Matching System*
-- *Performance Monitoring*: Real-time sales tracking and trigger detection
-- *Influencer Filtering*: Automatic matching based on criteria and budgets
-- *Smart Engagement*: Progressive escalation through influencer tiers
+### Campaigns
 
-### *Payment Processing*
-- *Escrow Management*: Secure fund holding until deliverable completion
-- *Per-Advertisement Payments*: Granular payment releases for each approved deliverable
-- *Automatic Transfers*: Blockchain-based instant payments upon approval
+```http
+POST /campaigns
+Content-Type: application/json
+```
 
-### *Credibility System*
-- *Task Completion Tracking*: Monitor influencer delivery rates
-- *Dynamic Scoring*: Adjust credibility based on performance history
-- *Reputation Impact*: Influence future campaign matching opportunities
+```json
+{
+  "merchant_addr": "0xMERCHANT",
+  "title": "Concert X",
+  "description": "City launch",
+  "image": "",
+  "kpi_target": 50,
+  "window_secs": 86400,
+  "base_fee": 50000,
+  "bonus_fee": 25000,
+  "budget_hint": 100000,
+  "thresholds": [10, 20],
+  "influencers": ["0xINFL1", "0xINFL2"]
+}
+```
 
-## 🛠️ Technical Implementation
-
-### *Smart Contract Features*
-- Automated trigger execution
-- Performance-based payment releases
-
-### Demo Accounts
-- *Seller Demo*: Experience campaign creation and management
-- *Influencer Demo*: Browse marketplace and manage contracts
-
-## 📊 Platform Statistics
-
-[Insert Platform Stats Section]
-Add key metrics and usage statistics
+```http
+POST /campaigns/:id/evaluate
+POST /campaigns/:id/finalize
+```
 
 
 
+---
 
+## 👥 Workflows
 
+### 🏢 Sellers (Businesses)
+
+1. **Create campaign:** KPI target, window, thresholds, ranked influencers.
+2. **Fund treasury** (devnet faucet for demos / test environments).
+3. **Checkout hook** calls `/sales` after each successful purchase.
+4. **Evaluate** periodically (cron or button); auto-rotation on underperformance.
+5. **Finalize** to emit payout intent; treasury transfers funds.
+
+### 🎤 Influencers (Creators)
+
+1. **Register profile** with pricing, platforms, minimum budgets.
+2. **Receive offers** when rotation events fire (or manual invite).
+3. **Deliver proofs** and track milestones.
+4. **Get paid** upon `PayoutReleased` → treasury executes transfer.
