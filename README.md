@@ -16,7 +16,9 @@ By combining React-based dashboards, a Node.js backend, and Aptos blockchain con
 
 #🌍 Vision
 
-To revolutionize influencer marketing by building a trustless, transparent, and automated ecosystem where businesses maximize ROI and influencers are rewarded fairly based on real performance. AptoFluence envisions a world where brands and creators collaborate without middlemen, empowered by the speed, security, and scalability of the Aptos blockchain.
+To revolutionize influencer marketing by building a trustless, transparent, and automated ecosystem where businesses maximize ROI and influencers are rewarded fairly based on real performance.
+Our Aim is to brin Web2 experience for the Web3 product and cater a larger audience with our project.
+ AptoFluence envisions a world where brands and creators collaborate without middlemen, empowered by the speed, security, and scalability of the Aptos blockchain.
 
 ## 🌟 Key Features
 
