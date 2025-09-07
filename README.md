@@ -14,11 +14,16 @@ Payments are managed through smart contract–backed escrow intents, ensuring fu
 By combining React-based dashboards, a Node.js backend, and Aptos blockchain contracts, AptoFluence provides a frictionless, scalable, and transparent solution for modern influencer marketing in the Web3 creator economy.
 ---
 
-#🌍 Vision
+## 🌟 Project Vision
 
-To revolutionize influencer marketing by building a trustless, transparent, and automated ecosystem where businesses maximize ROI and influencers are rewarded fairly based on real performance.
-Our Aim is to brin Web2 experience for the Web3 product and cater a larger audience with our project.
- AptoFluence envisions a world where brands and creators collaborate without middlemen, empowered by the speed, security, and scalability of the Aptos blockchain.
+AptoFluence envisions a future where *Web 3.0 technology feels like Web 2.0 simplicity*. We're building the world's first blockchain-powered influencer marketing platform that delivers the trust and automation of Web 3.0 while maintaining the familiar, user-friendly experience that everyone knows and loves.
+
+### *Our Mission*
+To make blockchain technology invisible to users while delivering superior results. Our mission is to:
+- *Make Web 3.0 accessible*: Non-technical users can leverage blockchain benefits without complexity
+- *Simplify for everyone*: Sellers and influencers use familiar interfaces while enjoying Web 3.0 advantages
+- *Expand to all users*: From tech-savvy early adopters to traditional businesses and everyday creators
+- *Deliver better results*: Sellers get higher-quality influencers through automated matching and guaranteed performance
 
 ## 🌟 Key Features
 
